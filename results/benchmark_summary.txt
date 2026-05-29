@@ -1,0 +1,20 @@
+Benchmark: Subir Escaleras (W(n) = F(n+1))
+
+Algoritmos comparados:
+- pesada_exponencial: recursión ingenua sin memoización
+  Tiempo: Θ(φ^n) (exponencial), 
+  Espacio: O(n) por recursión
+- optimizada_o1: fórmula cerrada (Binet) con modo híbrido (float/decimal)
+  "O(1)" en número de pasos matemáticos, pero con decimal el costo real depende
+  de la precisión (tamaño del número).
+
+Configuración:
+- N_VALUES = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 50, 100, 500, 1000, 10000, 100000]
+- REPEATS  = 7
+- NUMBER   = 1
+- EXP_MAX_N = 35  (para n > EXP_MAX_N el exponencial se marca como skip)
+
+Archivos generados:
+- results/benchmark.csv
+- results/benchmark.png (log-log)
+- results/benchmark_small.png (zoom hasta EXP_MAX_N)
