@@ -23,6 +23,7 @@ Estrategia híbrida:
 from __future__ import annotations
 import math
 import decimal
+import sys
 
 SQRT5_F = math.sqrt(5.0)
 PHI_F = (1.0 + SQRT5_F) / 2.0
@@ -82,3 +83,13 @@ def formas_escalera_o1(n: int, precision: int | None = None) -> int:
         precision = int(k * 0.209) + 25
 
     return _fib_binet_decimal(k, precision=precision)
+
+
+def main() -> None:
+  n = int(sys.argv[1]) if len(sys.argv) > 1 else 4
+  resultado = formas_escalera_o1(n)
+  print(f"Para {n} escalones hay {resultado} formas de subirlos.")
+
+
+if __name__ == "__main__":
+  main()

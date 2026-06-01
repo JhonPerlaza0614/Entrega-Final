@@ -18,9 +18,21 @@ Nota:
   contrastar con una solución de tiempo constante (fórmula cerrada) o cercana.
 """
 
+import sys
+
 def formas_escalera_exponencial(n: int) -> int:
     if n < 0:
         raise ValueError("n debe ser >= 0")
     if n <= 1:
         return 1
     return formas_escalera_exponencial(n - 1) + formas_escalera_exponencial(n - 2)
+
+
+def main() -> None:
+  n = int(sys.argv[1]) if len(sys.argv) > 1 else 8
+  resultado = formas_escalera_exponencial(n)
+  print(f"Para {n} escalones hay {resultado} formas de subirlos.")
+
+
+if __name__ == "__main__":
+  main()
